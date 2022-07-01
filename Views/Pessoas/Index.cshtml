@@ -1,0 +1,83 @@
+﻿@model IEnumerable<WebApplication1.Models.Pessoa>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table" id="Table-Form">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nomePessoa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cpfPessoa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rgPessoa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefonePessoa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.emailPessoa)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.senhaPessoa)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.idGenero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.idEndereco)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.dataCadastroPessoa)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomePessoa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cpfPessoa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rgPessoa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefonePessoa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emailPessoa)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.senhaPessoa)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.idGenero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idEndereco)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.dataCadastroPessoa)
+            </td>*@
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.idPessoa" class="btn btn-primary">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.idPessoa" class="btn btn-secondary">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.idPessoa" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
